@@ -7,18 +7,18 @@
 
 const CONFIG = {
   yourName: '',                       // sem napiš své jméno (nahradí [TVÉ JMÉNO] v dopise)
-  startDate: '2024-11-12',            // začátek vztahu (RRRR-MM-DD)
+  startDate: '2026-09-12',            // začátek vztahu (RRRR-MM-DD)
   anniversaryDate: '2026-11-12',      // den, kdy se zobrazí speciální text
   timeZone: 'Europe/Prague',
   musicFile: 'assets/music/music.mp3',
 
   // Časová osa – uprav text, nebo doplň pole photo (např. 'assets/photos/photo1.jpg')
   timeline: [
-    { date: '12. 11. 2024', title: 'Začátek našeho příběhu', text: 'Den, kdy jsme spolu začali psát společnou kapitolu.', photo: '' },
+    { date: '12. 9. 2026', title: 'Začátek našeho příběhu', text: 'Den, kdy jsme spolu začali psát společnou kapitolu.', photo: '' },
     { date: 'Doplň datum', title: 'První společné vzpomínky', text: 'Sem napiš, co si z prvních chvil pamatuješ nejraději.', photo: '' },
     { date: 'Doplň datum', title: 'Nezapomenutelné okamžiky', text: 'Místo pro chvíli, na kterou nikdy nezapomeneš.', photo: '' },
     { date: 'Doplň datum', title: 'Společná dobrodružství', text: 'Výlet, cesta nebo obyčejný den, který byl výjimečný.', photo: '' },
-    { date: '12. 11. 2026', title: 'Naše druhé výročí', text: 'Dva roky a pořád máme před sebou spoustu stránek.', photo: '' }
+    { date: '12. 11. 2026', title: 'Dva měsíce spolu', text: 'Teprve začínáme a už teď se těším na všechny další stránky.', photo: '' }
   ],
 
   // Galerie – 8 slotů. Soubory vlož do assets/photos/ pod uvedenými názvy.
@@ -53,7 +53,7 @@ const CONFIG = {
     'Díky, že jsi součástí mého života.',
     'S tebou je všechno krásnější.',
     'Jsem moc rád, že právě ty jsi moje Lenička.',
-    'Dva roky jsou jen začátek. Těším se na všechny další.',
+    'Dva měsíce jsou jen začátek. Těším se na všechny další.',
     'Jsi moje nejoblíbenější místo na světě.'
   ]
 };
@@ -219,12 +219,12 @@ function updateCounter() {
   const clock = now.h * 60 + now.min;
   $('#cDays').textContent = fmt(days);
   $('#cMonths').textContent = fmt(months);
-  $('#cYears').textContent = fmt(Math.floor(months / 12));
+  $('#cWeeks').textContent = fmt(Math.floor(days / 7));
   $('#cHours').textContent = fmt(days * 24 + now.h);
   $('#cMinutes').textContent = fmt(days * 1440 + clock);
   const toGo = dayNumber(ann) - dayNumber(now);
   $('#anniv').hidden = toGo !== 0;
-  $('#timeNote').textContent = toGo > 0 ? `Do našeho výročí zbývá ${toGo} ${toGo === 1 ? 'den' : toGo < 5 ? 'dny' : 'dní'}.` : '';
+  $('#timeNote').textContent = toGo > 0 ? `Do našich dvou měsíců zbývá ${toGo} ${toGo === 1 ? 'den' : toGo < 5 ? 'dny' : 'dní'}.` : '';
 }
 updateCounter();
 setInterval(updateCounter, 1000);
