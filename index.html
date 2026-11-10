@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Dva roky s tebou, Leničko</title>
+  <meta name="theme-color" content="#431B2B">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- Fonty z Google Fonts. Bez internetu se použijí náhradní fonty z style.css. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Homemade+Apple&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="Hlavní navigace">
+    <a href="#uvod">Úvod</a>
+    <a href="#dopis">Dopis</a>
+    <a href="#pribeh">Příběh</a>
+    <a href="#fotky">Fotky</a>
+    <a href="#cas">Čas</a>
+    <a href="#duvody">Důvody</a>
+    <a href="#prekvapeni">Překvapení</a>
+  </nav>
+
+  <main>
+    <!-- 3. HERO -->
+    <section class="hero" id="uvod" data-nav>
+      <p class="hero__small reveal-seq">12. 11. 2026</p>
+      <h1 class="hero__title reveal-seq">Pro tu nejkrásnější osobu<br>v mém životě.</h1>
+      <p class="hero__sub reveal-seq">Dva roky našeho příběhu.</p>
+      <p class="hero__script reveal-seq">A to nejkrásnější nás teprve čeká...</p>
+      <a class="btn reveal-seq" href="#dopis">Otevřít náš příběh</a>
+    </section>
+
+    <!-- 4. OBÁLKA A DOPIS -->
+    <section class="letter-section" id="dopis" data-nav>
+      <div class="stage" id="stage">
+        <button class="envelope" id="envelope" type="button" aria-expanded="false" aria-label="Otevřít dopis pro Leničku">
+          <span class="env-back"></span>
+          <span class="env-paper" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="env-front"></span>
+          <span class="env-flap"></span>
+          <span class="env-text">
+            <span class="env-name">Pro moji Leničku</span>
+            <span class="env-hint">Otevři, až budeš chtít vědět, co pro mě znamenáš.</span>
+          </span>
+          <span class="seal" aria-hidden="true">❤</span>
+        </button>
+
+        <article class="letter" id="letter" aria-hidden="true" aria-label="Milostný dopis">
+          <div class="letter__orn" aria-hidden="true">✦ ❦ ✦</div>
+          <time class="letter__date" datetime="2026-11-12">12. listopadu 2026</time>
+          <div class="letter__body">
+            <p>Moje milovaná Leničko,</p>
+            <p>ani nevím, jak začít. Jsou to už dva roky, co jsme spolu začali psát náš příběh. Dva roky plné okamžiků, které pro mě znamenají mnohem víc, než se dá vyjádřit několika větami.</p>
+            <p>Jsem neskutečně rád, že tě mám. Děkuju ti za každý úsměv, každé objetí, každou společnou chvíli a za všechno, díky čemu je můj život s tebou krásnější.</p>
+            <p>Nechci, aby tohle byly jen další dva roky, na které budeme vzpomínat. Chci, abychom spolu zažili ještě spoustu dalších dobrodružství, smíchu, krásných momentů a obyčejných dní, které jsou s tebou vlastně neobyčejné.</p>
+            <p>Miluju tě. A jsem šťastný, že právě s tebou můžu psát náš příběh.</p>
+            <p class="letter__sign">S láskou,<br><span class="signature" data-your-name>[TVÉ JMÉNO]</span> ❤</p>
+          </div>
+          <button class="btn btn--ghost" id="closeLetter" type="button">Zavřít dopis</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. PŘÍBĚH -->
+    <section class="block" id="pribeh" data-nav>
+      <h2 class="reveal">Každý krásný příběh má svůj začátek.</h2>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- 6. GALERIE -->
+    <section class="block" id="fotky" data-nav>
+      <h2 class="reveal">Naše fotografie</h2>
+      <p class="lead reveal">Fotky vlož do <code>assets/photos/</code> a popisky uprav v <code>script.js</code>.</p>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- 7. ČAS -->
+    <section class="block block--dark" id="cas" data-nav>
+      <h2 class="reveal">Naše dva roky</h2>
+      <p class="lead reveal" id="timeNote"></p>
+      <div class="counter" id="counter" aria-live="off">
+        <div><b id="cYears">0</b><span>let</span></div>
+        <div><b id="cMonths">0</b><span>měsíců</span></div>
+        <div class="counter__main"><b id="cDays">0</b><span>dní spolu</span></div>
+        <div><b id="cHours">0</b><span>hodin</span></div>
+        <div><b id="cMinutes">0</b><span>minut</span></div>
+      </div>
+      <p class="anniv" id="anniv" hidden>Dva roky. Jeden příběh. A nekonečně mnoho dalších okamžiků před námi.</p>
+    </section>
+
+    <!-- 8. DŮVODY -->
+    <section class="block" id="duvody" data-nav>
+      <h2 class="reveal">10 důvodů, proč jsi pro mě výjimečná.</h2>
+      <p class="lead reveal">Klikni na kartičku a otoč ji.</p>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <!-- 9. PŘEKVAPENÍ -->
+    <section class="surprise" id="prekvapeni" data-nav>
+      <h2 class="reveal">Ještě jedno malé překvapení...</h2>
+      <button class="btn btn--big" id="surpriseBtn" type="button">Klikni na mě ❤️</button>
+      <p class="surprise__msg" id="surpriseMsg" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">Pro Leničku · 12. 11. 2024 – 12. 11. 2026 ❤</footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografie" hidden>
+    <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Zavřít">✕</button>
+    <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Předchozí">‹</button>
+    <figure><div class="lb-img" id="lbImg"></div><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Další">›</button>
+  </div>
+
+  <!-- Hudba -->
+  <div class="player" id="player">
+    <button id="playBtn" type="button" aria-label="Přehrát hudbu" aria-pressed="false"><span class="play-icon"></span></button>
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+    <input id="volume" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Hlasitost">
+    <span class="player__note" id="playerNote" hidden>Vlož hudbu do assets/music/music.mp3</span>
+  </div>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Zpět nahoru">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
