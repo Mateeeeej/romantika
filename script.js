@@ -6,7 +6,7 @@
 'use strict';
 
 const CONFIG = {
-  yourName: '',                       // sem napiš své jméno (nahradí [TVÉ JMÉNO] v dopise)
+  yourName: 'Matěj',                       // sem napiš své jméno (nahradí [TVÉ JMÉNO] v dopise)
   startDate: '2026-09-12',            // začátek vztahu (RRRR-MM-DD)
   anniversaryDate: '2026-11-12',      // den, kdy se zobrazí speciální text
   timeZone: 'Europe/Prague',
@@ -14,11 +14,11 @@ const CONFIG = {
 
   // Časová osa – uprav text, nebo doplň pole photo (např. 'assets/photos/photo1.jpg')
   timeline: [
-    { date: '12. 9. 2026', title: 'Začátek našeho příběhu', text: 'Den, kdy jsme spolu začali psát společnou kapitolu.', photo: '' },
-    { date: 'Doplň datum', title: 'První společné vzpomínky', text: 'Sem napiš, co si z prvních chvil pamatuješ nejraději.', photo: '' },
-    { date: 'Doplň datum', title: 'Nezapomenutelné okamžiky', text: 'Místo pro chvíli, na kterou nikdy nezapomeneš.', photo: '' },
-    { date: 'Doplň datum', title: 'Společná dobrodružství', text: 'Výlet, cesta nebo obyčejný den, který byl výjimečný.', photo: '' },
-    { date: '12. 11. 2026', title: 'Dva měsíce spolu', text: 'Teprve začínáme a už teď se těším na všechny další stránky.', photo: '' }
+    { date: '12. 9. 2026', title: 'Začátek našeho příběhu', text: 'Den, kdy jsme spolu začali psát společnou kapitolu.', photo: 'assets/photos/photo1.jpg' },
+    { date: '27. 9. 2026', title: 'První společné vzpomínky', text: 'Chvíle, na které se mi vždycky vrací úsměv na tváři.', photo: 'assets/photos/photo2.jpg' },
+    { date: '11. 10. 2026', title: 'Nezapomenutelné okamžiky', text: 'Okamžiky, které si chci pamatovat napořád.', photo: 'assets/photos/photo3.jpg' },
+    { date: '25. 10. 2026', title: 'Společná dobrodružství', text: 'Každý společný den je malé dobrodružství.', photo: 'assets/photos/photo4.jpg' },
+    { date: '12. 11. 2026', title: 'Dva měsíce spolu', text: 'Teprve začínáme a už teď se těším na všechny další stránky.', photo: 'assets/photos/photo5.jpg' }
   ],
 
   // Galerie – 8 slotů. Soubory vlož do assets/photos/ pod uvedenými názvy.
